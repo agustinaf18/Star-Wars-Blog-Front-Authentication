@@ -30,12 +30,9 @@ console.log(personajes); //por ahora el personajes es un array vacio, linea 8  p
 	<h1 className="text-danger mx-5 container">Characters</h1>
     <div className="d-flex justify content center mx-5 my-2 overflow-auto
 ">      
-		{ personajes.map((item, index)=><Characters id={index + 1} nombre={item.name} genero={item.gender} pelo={item.hair_color} ojos={item.eye_color}/> )}
+		{ personajes.map((item, index)=><Characters key={index} id={index + 1} nombre={item.name} genero={item.gender} pelo={item.hair_color} ojos={item.eye_color}/> )}
 	</div>   
 	{/* pasamos por parametros el index, ya que la api no tenia id, entonces, id corresponde a nuestro index, y como el index empieza en la posicion 0, ej 0:name: luke skywalker le debemos sumar 1, asi empieza en 1 asi: id: 1, nombre: 'Luke Skywalker', genero: 'male', pelo: 'blond', ojos: 'blue'} */}
-
-   
-
 
    <div className="text-start mt-2 mx-5 text-danger">
 		<h1>Planets</h1>
@@ -59,9 +56,9 @@ console.log(personajes); //por ahora el personajes es un array vacio, linea 8  p
 	  <div className="col-3"><Vehicles/></div>
 	  <div className="col-3"><Vehicles/></div> */}
    </div>
-
 	</>
-	
-
 );
 }
+
+
+

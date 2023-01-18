@@ -22,7 +22,7 @@ export const Characters = (props) => {
 
         <div className="card-footer d-flex">
           <Link to={"/single/"+ props.id} className="btn btn-primary mx-5" > Learn more! </Link>
-          <button type="button" className="btn btn-outline-warning" style={{ height: 40, width: 40 }}> <i class="fa fa-heart"></i></button>
+          <button type="button" className="btn btn-outline-warning" style={{ height: 40, width: 40 }}> <i className="fa fa-heart"></i></button>
 
         </div>
       </div>
@@ -30,3 +30,5 @@ export const Characters = (props) => {
     </>	
 	);
 };
+
+//btn btn-primary btn-sm ms-2

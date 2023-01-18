@@ -22,7 +22,7 @@ export const Planets = () => {
           <a href="#" className="btn btn-primary mx-1">
             Go somewhere
           </a>
-          <button type="button" className="btn btn-outline-warning mx-3 " style={{ height: 40, width: 40 }}> <i class="fa fa-heart"></i></button>
+          <button type="button" className="btn btn-outline-warning mx-3 " style={{ height: 40, width: 40 }}> <i className="fa fa-heart"></i></button>
         </div>
       </div>
     </div>
