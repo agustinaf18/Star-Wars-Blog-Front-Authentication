@@ -8,7 +8,7 @@ export const Cartadetalles = (props) => {
       <div className="d-flex flex-row">
         <img
           className="card-img-top"
-          src="https://isccoquimbo.cl/images/400X200.gif"
+          src="https://starwars-visualguide.com/assets/img/characters/1.jpg"
           alt="Card image cap"
         ></img>
         <div className="card-body">

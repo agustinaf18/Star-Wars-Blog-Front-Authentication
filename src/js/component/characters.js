@@ -10,7 +10,7 @@ export const Characters = (props) => {
       style={{ width: "30rem" }}
     >
       <img
-        src="https://turismolanzarote.com/wp-content/uploads/2017/03/Playas-PuertoDelCarmen-PlayaGrande-LR-5.jpg"
+        src={"https://starwars-visualguide.com/assets/img/characters/"+props.id+".jpg"}
         className="card-img-top"
         alt="..."
       />
