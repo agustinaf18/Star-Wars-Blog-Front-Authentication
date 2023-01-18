@@ -26,16 +26,10 @@ export const Cartadetalles = (props) => {
           </p>
         </div>
       </div>
-      <hr className="text-danger mt-5"/>
+      {/* <hr className="text-danger mt-5"/> */}
 
-      <div className="d-flex container-fluid">
-        <h3 className="col-3">hola</h3>
-        <h3 className="col-3">hola</h3>
-        <h3 className="col-3">hola</h3>
-        <h3 className="col-3">hola</h3>
-        <h3 className="col-3">hola</h3>
-        <h3 className="col-3">hola</h3>
-      </div>
+      
+      
     </>
   );
 };

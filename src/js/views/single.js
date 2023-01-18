@@ -28,6 +28,7 @@ export const Single = (props) => {
       <div className="container mt-2 mb-2">
         <div className="jumbotron">
           {/* <hr className="my-4" /> */}
+          
           <Cartadetalles nombre={detallePersonaje.name} />
           <Link to="/">
             <span
@@ -38,8 +39,28 @@ export const Single = (props) => {
               Back home
             </span>
           </Link>
+
+         <hr className="text-danger mt-5"/> 
+        </div>
+        <div className="d-flex container-fluid text-danger">
+          <h6 className="col-3">Name</h6>
+          <h6 className="col-3">Birth Year</h6>
+          <h6 className="col-3">Gender</h6>
+          <h6 className="col-3">Height</h6>
+          <h6 className="col-3">Skin Color</h6>
+          <h6 className="col-3">Eye color</h6>
+        </div>
+        <div className="d-flex container-fluid text-danger my-4">
+          <h6 className="col-3">{detallePersonaje.name}</h6>
+          <h6 className="col-3">{detallePersonaje.birth_year}</h6>
+          <h6 className="col-3">{detallePersonaje.gender}</h6>
+          <h6 className="col-3">{detallePersonaje.height}</h6>
+          <h6 className="col-3">{detallePersonaje.skin_color}</h6>
+          <h6 className="col-3">{detallePersonaje.eye_color}</h6>
         </div>
       </div>
+
+      
     </>
   );
 };
