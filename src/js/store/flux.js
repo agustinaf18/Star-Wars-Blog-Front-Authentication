@@ -111,7 +111,6 @@ const getState = ({
 export default getState;
 
 
-
 //notas
 // 1 despues de traer el  primer fetch  y llamarla en appcontext
 // 2 luego el map en home con vehiculos por ej es para el home 
