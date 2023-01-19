@@ -2,7 +2,7 @@ import React, {useEffect, useState, useContext} from "react";
 import "../../styles/home.css";
 import { Characters }  from "../component/characters";
 import { Planets }  from "../component/planets";
-import { Vehicles }  from "../component/vehicles";
+import { Vehicles } from "../component/vehicles";
 import { Context } from "../store/appContext.js";
 
 export const Home = () => {
@@ -13,7 +13,7 @@ export const Home = () => {
 
 	   const {store}=useContext(Context)
 	   console.log(store.personajes);
-	   console.log(store.planetas);
+	//    console.log(store.planetas);
 
 
  //CHARACTERS-----------------------------------------------------------------------------------------------------------------
@@ -47,8 +47,7 @@ export const Home = () => {
  return(
 	<>
 	<h1 className="text-danger mx-5 container">Characters</h1>
-    <div className="d-flex justify content center mx-5 my-2 overflow-auto
-">      
+    <div className="d-flex justify content center mx-5 my-2 overflow-auto">      
 		 { store.personajes.map((item, index)=><Characters key={index} id={index + 1} nombre={item.name} genero={item.gender} pelo={item.hair_color} ojos={item.eye_color}/> )} 		  
 	</div>  
 	
@@ -57,6 +56,25 @@ export const Home = () => {
 	{ store.planetas.map((item, index)=><Planets key={index} id={index + 1} nombreplaneta={item.name} poblacion={item.population
 } terreno={item.terrain} clima={item.climate} Orbitalperiod={item.orbital_period}  Rotationperiod={item.rotation_period} Diameter={item.diameter}/> )}
    </div> 
+
+   
+   <div className="d-flex justify content center mx-5 my-2 overflow-auto">
+	{ store.vehicles.map((item, index)=><Vehicles key={index} id={index + 1} nombrevehiculo={item.name} modelo={item.model
+} capacidad={item.cargo_capacity} velocidad={item.max_atmosphering_speed
+} pasajeros={item.passengers
+}  tipodevehiculo={item.vehicle_class} largo={item.length
+}/> )}
+   </div> 
+
+
+
+
+   
+
+   {/* <h1 className="text-danger mx-5 container">Vehicles</h1>
+	<div className="d-flex justify content center mx-5 my-2 overflow-auto">
+	{ store.vehiculos.map((item, index)=><Vehicles key={index} id={index + 1} nombrevehiculo={item.name} cargocapcity={item.cargo_capacity} pasajeros={item.passengers} velocidad={item.max_atmosphering_speed} tripulacion={item.crew} largo={item.lenght} modelo={item.model} /> )}
+   </div>  */}
 
 
  
