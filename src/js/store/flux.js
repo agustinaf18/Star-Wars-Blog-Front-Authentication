@@ -10,6 +10,7 @@ const getState = ({
             vehicles: [],
             detallePlaneta: {},
             detallePersonaje: {},
+            detalleVehicle: {},
         },
         actions: {
             // Use getActions to call a function within a fuction
@@ -72,6 +73,15 @@ const getState = ({
             },
             // console.log(detallePlaneta); //es un objeto que tiene toda la data de un Planeta
             // console.log(detallePlaneta.name);
+
+            obtenerInfoDeCadaVehicle: (id) => {
+                fetch("https://swapi.dev/api/vehicles/" + id)
+                   .then((res) => res.json())
+                   .then(data => setStore({detalleVehicle : data 
+                }))
+                   .catch((err) => console.error(err));
+            },
+
 
             loadSomeData: () => {
                 /**
