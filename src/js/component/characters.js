@@ -10,7 +10,7 @@ export const Characters = (props) => {
       style={{ width: "30rem" }}
     >
       <img
-        src={"https://starwars-visualguide.com/assets/img/characters/"+props.id+".jpg"}
+        src={"https://starwars-visualguide.com/assets/img/characters/"+props.id+".jpg" }
         className="card-img-top"
         alt="..."
       />

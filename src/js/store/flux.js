@@ -16,7 +16,8 @@ const getState = ({
                     initial: "white"
                 }
             ],
-            personajes: []
+            personajes: [],
+            planetas: []
         },
         actions: {
             // Use getActions to call a function within a fuction
@@ -31,6 +32,16 @@ const getState = ({
                     }))
                     .catch(err => console.error(err))
             },
+
+            obtenerPlanetas: () => {
+                fetch("https://swapi.dev/api/planets/")
+                    .then(res => res.json())
+                    .then(data => setStore({
+                        planetas: data.results
+                    }))
+                    .catch(err => console.error(err))
+            },
+
             loadSomeData: () => {
                 /**
                 	fetch().then().then(data => setStore({ "foo": data.bar }))

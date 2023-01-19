@@ -29,16 +29,7 @@ export const Single = (props) => {
         <div className="jumbotron">
           {/* <hr className="my-4" /> */}
           
-          <Cartadetalles nombre={detallePersonaje.name} />
-          <Link to="/">
-            <span
-              className="btn btn-primary btn-lg position-absolute bottom-0 end-0 my-4 mx-4"
-              href="#"
-              role="button"
-            >
-              Back home
-            </span>
-          </Link>
+          <Cartadetalles nombre={detallePersonaje.name} />         
 
          <hr className="text-danger mt-5"/> 
         </div>
@@ -59,7 +50,15 @@ export const Single = (props) => {
           <h6 className="col-3">{detallePersonaje.eye_color}</h6>
         </div>
       </div>
-
+      {/* <Link to="/">
+            <span
+              className="btn btn-primary btn-lg position-absolute bottom-0 end-0 mx-4"
+              href="#"
+              role="button"
+            >
+              Back home
+            </span>
+          </Link> */}
       
     </>
   );
