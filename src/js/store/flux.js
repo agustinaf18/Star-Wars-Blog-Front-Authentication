@@ -5,19 +5,9 @@ const getState = ({
 }) => {
     return {
         store: {
-            demo: [{
-                    title: "FIRST",
-                    background: "white",
-                    initial: "white"
-                },
-                {
-                    title: "SECOND",
-                    background: "white",
-                    initial: "white"
-                }
-            ],
             personajes: [],
-            planetas: []
+            planetas: [],
+            detallePlaneta: {},
         },
         actions: {
             // Use getActions to call a function within a fuction
@@ -41,6 +31,18 @@ const getState = ({
                     }))
                     .catch(err => console.error(err))
             },
+
+            obtenerInfoDeCadaPlaneta: (id) => {
+                //La logica no se renderiza  paso por parametros el id cuando hago click a un planeta se capta el id al momento de cada planeta
+                fetch("https://swapi.dev/api/planets/" + id) // buscar que quede de forma dinamica useParams, 
+                    .then((res) => res.json())
+                    .then((data) => setStore({
+                        detallePlaneta: data
+                    }))
+                    .catch((err) => console.error(err));
+            },
+            // console.log(detallePlaneta); //es un objeto que tiene toda la data de un Planeta
+            // console.log(detallePlaneta.name);
 
             loadSomeData: () => {
                 /**
