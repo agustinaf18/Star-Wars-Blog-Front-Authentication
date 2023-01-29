@@ -2,7 +2,7 @@ import React, {useContext} from "react"; // tenemos que importar lo del useconte
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.js";
 
-export const Characters = (props) => {
+export const Characters = (props, nombre, id) => {
   const {actions}=useContext(Context)
 
   console.log(props);
@@ -25,7 +25,7 @@ export const Characters = (props) => {
 
         <div className="card-footer d-flex ">
           <Link to={"/single/"+ props.id} className="btn btn-primary mx-5 " style={{ width: 80 }} > Learn </Link>
-          <button onClick={()=>actions.agregarFavorito(props)} type="button" className="btn btn-outline-warning" style={{ height: 40, width: 40 }}> <i className="fa fa-heart"></i></button>
+          <button onClick={()=>actions.agregarFavorito(props, nombre, id)} type="button" className="btn btn-outline-warning" style={{ height: 40, width: 40 }}> <i className="fa fa-heart"></i></button>
 
         </div>
       </div>

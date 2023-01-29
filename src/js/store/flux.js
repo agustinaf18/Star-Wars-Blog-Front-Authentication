@@ -84,8 +84,15 @@ const getState = ({
                     .catch((err) => console.error(err));
             },
 
-            agregarFavorito: (props) => {
-                console.log("funciona");
+            agregarFavorito: (props, nombre, id) => {
+                let store = getStore(); //tenemos que traer el array favoitos
+                let contenedordeelemento = {} //necesitamos recorrer el array favorito guardarlo en  contenedordeelemento
+                contenedordeelemento.nombresdecadatema = props.nombre
+                contenedordeelemento.id = props.id
+                setStore({
+                    favoritos: [...store.favoritos, contenedordeelemento]
+                })
+
             },
 
             loadSomeData: () => {

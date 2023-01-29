@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useContext} from "react"; // tenemos que importar lo del usecontext como lo de la store, porque si la store estaba en flux he importamos el usecontext y eso, con lo de chr, planets y vehicles hacemos lo mismo. al sacar de flux elementos de usa el use context y todos sus pasos detras 
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext.js";
 
 export const Planets = (props) => {
+  const {actions}=useContext(Context)
+
   console.log(props);
 	return (
     <>
@@ -22,7 +25,7 @@ export const Planets = (props) => {
         <div className="card-footer d-flex">
           <Link to={"/singleplanets/" + props.id} className="btn btn-primary mx-5 " style={{ width: 80 }} > Learn </Link>
         {/* <Link to={"/singleplanets/"+ props.id} className="btn btn-primary mx-5 " style={{ width: 80 }} > Learn </Link> */}
-          <button type="button" className="btn btn-outline-warning mx-3 " style={{ height: 40, width: 40 }}> <i className="fa fa-heart"></i></button>
+          <button onClick={()=>actions.agregarFavorito(props)} type="button" className="btn btn-outline-warning mx-3 " style={{ height: 40, width: 40 }}> <i className="fa fa-heart"></i></button>
         </div>
       </div>
     </div>
