@@ -15,7 +15,7 @@ export const Vehicles = (props) => {
         alt="..."
       />
       <div className="card-body">
-        <h5 className="card-title">{props.nombrevehiculo}</h5>
+        <h5 className="card-title">{props.nombre}</h5>
         <p className="card-text">Model: {props.modelo}</p>
         <p className="card-text">Passengers: {props.pasajeros}</p>  
 

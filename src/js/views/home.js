@@ -53,13 +53,13 @@ export const Home = () => {
 	
 	<h1 className="text-danger mx-5 container">Planets</h1>
 	<div className="d-flex justify content center mx-5 my-2 overflow-auto">
-	{ store.planetas.map((item, index)=><Planets key={index} id={index + 1} nombreplaneta={item.name} poblacion={item.population
+	{ store.planetas.map((item, index)=><Planets key={index} id={index + 1} nombre={item.name} poblacion={item.population
 } terreno={item.terrain} clima={item.climate} Orbitalperiod={item.orbital_period}  Rotationperiod={item.rotation_period} Diameter={item.diameter}/> )}
    </div> 
 
    
    <div className="d-flex justify content center mx-5 my-2 overflow-auto">
-	{ store.vehicles.map((item, index)=><Vehicles key={index} id={index + 1} nombrevehiculo={item.name} modelo={item.model
+	{ store.vehicles.map((item, index)=><Vehicles key={index} id={index + 1} nombre={item.name} modelo={item.model
 } capacidad={item.cargo_capacity} velocidad={item.max_atmosphering_speed
 } pasajeros={item.passengers
 }  tipodevehiculo={item.vehicle_class} largo={item.length

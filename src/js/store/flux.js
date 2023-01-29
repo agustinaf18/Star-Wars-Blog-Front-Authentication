@@ -11,6 +11,7 @@ const getState = ({
             detallePlaneta: {},
             detallePersonaje: {},
             detalleVehicle: {},
+            favoritos: [],
         },
         actions: {
             // Use getActions to call a function within a fuction
@@ -41,7 +42,7 @@ const getState = ({
                     // .then(data=> console.log(data.results))
                     .then(data => setStore({
                         vehicles: data.results
-                    }))  
+                    }))
                     // .then(data => setStore({
                     //     personajes: data.results
                     // }))
@@ -76,12 +77,16 @@ const getState = ({
 
             obtenerInfoDeCadaVehicle: (id) => {
                 fetch("https://swapi.dev/api/vehicles/" + id)
-                   .then((res) => res.json())
-                   .then(data => setStore({detalleVehicle : data 
-                }))
-                   .catch((err) => console.error(err));
+                    .then((res) => res.json())
+                    .then(data => setStore({
+                        detalleVehicle: data
+                    }))
+                    .catch((err) => console.error(err));
             },
 
+            agregarFavorito: (props) => {
+                console.log("funciona");
+            },
 
             loadSomeData: () => {
                 /**
