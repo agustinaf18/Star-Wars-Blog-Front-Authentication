@@ -2,9 +2,12 @@ import React, {useContext} from "react"; //hacemos los pasos de usecontext 1
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.js"; // 2
 
-export const Navbar = () => {
+export const Navbar = (props) => {
 	const {store}=useContext(Context); //store porque quiero acceder a favoritos
+    const {actions}=useContext(Context)
+
 	console.log(store.favoritos);
+	console.log(props);
 	
 	return (
 		
@@ -22,9 +25,16 @@ export const Navbar = () => {
 			<li className="nav dropdown">
     <a className="nav-link dropdown-toggle btn btn-primary text-white mx-5" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Favorites</a>
 	<ul className="dropdown-menu mx-5">
-        {store.favoritos.map((item, index) => <div className="row" key={index}><button className="list-group-item btn btn-outline-primary col-10">{item.nombresdecadatema} {index.id} </button></div>)}
+        {store.favoritos.map((item, index) => <div className="row" key={index}><button className="list-group-item btn btn-outline-primary col-10">{item.nombresdecadatema} {index.id} <button
+						className="btn btn-secondary rounded opacity-10 mx-0 "
+						type="button"
+						id="eliminar"
+						onClick={() =>actions.eliminarDatos(props)}
+						>
+						BORRAR
+						</button> </button></div>)}
     </ul>
-  </li>
+    </li>
 		</nav>
 	);
 };

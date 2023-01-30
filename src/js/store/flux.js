@@ -92,6 +92,17 @@ const getState = ({
                 setStore({
                     favoritos: [...store.favoritos, contenedordeelemento]
                 })
+            },
+
+            eliminarDatos: (id) => {
+                let store = getStore(); //tenemos que traer el array favoitos
+                const contenedorparaborrar = store.favoritos; //declaramos la varaible contenedordeborrear donde vamos a guardar store.favoritos que en el array favoritos tenemos los nombres  favoritos: [...store.favoritos, contenedordeelemento] dentro del array favoritos esta contenedordeelemento que es donde esta la info del nombre,  ya trajimos recien el [] favoritos con la info que necesitabamos los nombres, en resumen creamos una varaible en la que guardamos el array de favoritos con los nombres
+
+                contenedorparaborrar.splice(id); //metodo w3schools para remover elemento  y le pasamos como parametro id que va con el nombre, que definimos en la funcion de arriba de agregarFavorito, dentro de el array favoritos se encuentra el nombre y el id, estos dentro de contenedordeelemento
+
+                setStore({
+                    favoritos: contenedorparaborrar //guardamos contenedorparaborrar en el [{}] favoritos
+                });
 
             },
 
