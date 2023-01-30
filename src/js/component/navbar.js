@@ -29,7 +29,7 @@ export const Navbar = (props) => {
 						className="btn btn-secondary rounded opacity-10 mx-0 "
 						type="button"
 						id="eliminar"
-						onClick={() =>actions.eliminarDatos(props)}
+						onClick={() =>actions.eliminarDatos(item)}
 						>
 						BORRAR
 						</button> </button></div>)}
