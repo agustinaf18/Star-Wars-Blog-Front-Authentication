@@ -138,6 +138,11 @@ const getState = ({
                     // nombre de donde se guard ,  el valor access_token se guarda en token
                     .then((data) => {
                         console.log(data);
+
+
+                        if (data.msg === "Bad email or password") {
+                            alert("data.msg")
+                        }
                         localStorage.setItem("token", data.access_token)
                     }) // nos llega un objeto llamado data y tiene una propiedad access_token
                     .catch((err) => console.log(err))
