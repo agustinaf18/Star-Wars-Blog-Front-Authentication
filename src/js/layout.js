@@ -8,6 +8,7 @@ import { Single } from "./views/single";
 import { Singleplanets } from "./views/singleplanets";
 import { Singlevehicles } from "./views/singlevehicles";
 import injectContext from "./store/appContext";
+import { Form } from "./views/iniciologin";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -24,7 +25,9 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Routes>
-						<Route path="/" element={<Home />} />
+						
+					    <Route path="/home" element={<Home />} />
+						<Route path="/" element={<Form />} />
 						<Route path="/demo" element={<Demo />} />
 						<Route path="/single/:theid" element={<Single />} />
 						<Route path="/singleplanets/:theid" element={< Singleplanets />} />

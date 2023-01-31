@@ -5,6 +5,7 @@ import { Planets }  from "../component/planets";
 import { Vehicles } from "../component/vehicles";
 import { Context } from "../store/appContext.js";
 
+
 export const Home = () => {
     // const [personajes, setPersonajes]=useState([])
 	// const [planetas, setPlanetas]=useState([])

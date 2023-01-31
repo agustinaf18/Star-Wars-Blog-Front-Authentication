@@ -12,6 +12,7 @@ const getState = ({
             detallePersonaje: {},
             detalleVehicle: {},
             favoritos: [],
+            estalogueado: false, //se va a mantener en falso cuando todavia no se a corroborado si estamos autenitcados(es decir que pudimos loguearnos a la pagina). se va a mantener en falso todavia no se a corroborado con el  if (response.status === 200), el if pregunta si existe un usuario en la base de datos es decir que se logueo entonces autentificacion va a devolver true, tiene un token y si esa persona tiene un token devuelve el state 200
         },
         actions: {
             // Use getActions to call a function within a fuction
@@ -110,6 +111,41 @@ const getState = ({
                 });
 
             },
+            //recipiente 1 recioiente 2
+            inicioLogin: (userEmail, userPassword) => {
+                fetch('https://3000-agustinaf18-autentifica-oajyma3jxwp.ws-us84.gitpod.io/login', {
+                        method: 'POST',
+                        // mode: 'no-cors',
+                        // credentials: 'include',
+                        headers: {
+                            'Content-Type': 'application/json'
+                            // 'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: JSON.stringify({
+                            "email": userEmail,
+                            "password": userPassword
+                        }) //lo que tenga el recipiente reproducelo // body data type must match "Content-Type" header
+                    })
+                    .then((response) => {
+                        if (response.status === 200) {
+                            setStore({
+                                estalogueado: true
+                            })
+                        };
+                        return response.json()
+                    })
+
+                    // nombre de donde se guard ,  el valor access_token se guarda en token
+                    .then((data) => {
+                        console.log(data);
+                        localStorage.setItem("token", data.access_token)
+                    }) // nos llega un objeto llamado data y tiene una propiedad access_token
+                    .catch((err) => console.log(err))
+
+            },
+
+
+
 
             loadSomeData: () => {
                 /**
