@@ -34,7 +34,7 @@ export const Navbar = (props) => {
             
 
 			<li className="nav dropdown">
-    <a className="nav-link dropdown-toggle btn btn-primary text-white mx-5" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Favorites</a>
+			{store.estalogueado === true?<a className="nav-link dropdown-toggle btn btn-primary text-white mx-5" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Favorites</a>: null}
 	<ul className="dropdown-menu mx-5">
         {store.favoritos.map((item, index) => <div className="row" key={index}><button className="list-group-item btn btn-outline-primary col-10">{item.nombresdecadatema} {index.id} <button
 						className="btn btn-secondary rounded opacity-10 mx-0 "
@@ -48,7 +48,7 @@ export const Navbar = (props) => {
     </li>
 	        <div className="ml-auto">
 				{store.estalogueado === true? <button className="btn btn-primary" onClick={handleLogout}>Logout</button> : null}
-	
+	             
 			</div>
 	
 		</nav>
