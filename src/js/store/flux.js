@@ -111,9 +111,18 @@ const getState = ({
                 });
 
             },
+
+            logout: () => {
+                localStorage.removeItem('token');
+                setStore({
+                    estalogueado: false
+                })
+            },
+
+
             //recipiente 1 recioiente 2
             inicioLogin: (userEmail, userPassword) => {
-                fetch('https://3000-agustinaf18-autentifica-oajyma3jxwp.ws-us84.gitpod.io/login', {
+                fetch('https://3000-agustinaf18-autentifica-uanqmo8kwhb.ws-us84.gitpod.io/login', {
                         method: 'POST',
                         // mode: 'no-cors',
                         // credentials: 'include',
@@ -143,6 +152,7 @@ const getState = ({
                         if (data.msg === "Bad email or password") {
                             alert("data.msg")
                         }
+
                         localStorage.setItem("token", data.access_token)
                     }) // nos llega un objeto llamado data y tiene una propiedad access_token
                     .catch((err) => console.log(err))
