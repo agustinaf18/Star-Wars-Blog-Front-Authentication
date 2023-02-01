@@ -7,8 +7,6 @@ export const Navbar = (props) => {
 	const {store}=useContext(Context); //store porque quiero acceder a favoritos
     const {actions}=useContext(Context)
 
-	
-
 	console.log(store.favoritos);
 	console.log(props);
 

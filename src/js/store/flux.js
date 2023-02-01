@@ -159,7 +159,38 @@ const getState = ({
 
             },
 
-
+            registro: (userEmail, userPassword, userName) => {
+                console.log("funciona");
+                fetch('https://3000-4geeksacade-flaskresthe-v0h1chtk4mc.ws-eu84.gitpod.io/signup', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                            // 'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: JSON.stringify({
+                            "email": userEmail,
+                            "password": userPassword,
+                            "user_name": userName
+                        }) // body data type must match "Content-Type" header
+                    })
+                    .then((response) => {
+                        console.log(response.status);
+                        if (response.status === 200) {
+                            setStore({
+                                estalogueado: true
+                            })
+                        }
+                        return response.json()
+                    })
+                    .then((data) => {
+                        console.log(data)
+                        if (data.msg === "Bad email or password") {
+                            alert(" Bad email or password")
+                        }
+                        localStorage.setItem("token", data.access_token)
+                    })
+                    .catch((err) => console.log(err))
+            },
 
 
             loadSomeData: () => {

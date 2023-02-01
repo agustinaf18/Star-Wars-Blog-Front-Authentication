@@ -2,15 +2,23 @@
 import React, {useEffect, useState, useContext} from "react";
 import {Context} from "../store/appContext.js";
 import {Navigate} from "react-router-dom"
-
-
-
+import {useNavigate} from "react-router-dom"
 
 export const Form = () => {
 
 	const[email,setEmail]=useState("")
 	const[password,setPassword]=useState("")
+	const[nombreusuario,setNombreusuario]=useState("")
 	const {store, actions}=useContext(Context)
+
+	const navigate = useNavigate() //activamos useNavigate
+
+	function handleRegistro() {
+		actions.registro(email,nombreusuario,password)//cerrar la sesiono
+		navigate("/singleregistro")}//usamos navigate para redireccionar
+
+
+
  
 	function enviarDatos(e) {
 	 e.preventDefault()
@@ -30,20 +38,13 @@ export const Form = () => {
     // .catch((err)=>console.log(err))
 	}
  
- 
- //    if (condition) {//true
- //     //bloque de codigo
- //    }else{//false
- // //bloque de codigo
- //    }
- 
- // condition ? bloque de codigo si es true : bloque de codigo si es false
- 
- // store.auth === true ? <Navigate to="/ruta hacia donde ir"/> : <Formulario/>
 	
    return (
 	 <>
          {/* // //si estlogueado es true entonces lo va a llevar al home si no loo devuelve al formulario los dos puntitos : son el else */}
+
+
+		 
 	 {store.estalogueado === true ? <Navigate to= "/home" />:
 	 <form className="w-50 mx-auto" onSubmit={enviarDatos}>
 	   <div className="mb-3 container">
@@ -75,12 +76,17 @@ export const Form = () => {
 		 Submit
 	   </button>
 	 </form>}
+
+	 <div className="ml-auto">
+	 {store.estalogueado === false? <button className="btn btn-primary" onClick={handleRegistro}>Registro</button>: null}
+	             
+			</div>
+	 {/* <button className="btn btn-primary" onClick={handleRegistro}>Registrarse</button>  */}
 	 </>
 	 
    );
  };
- 
- 
+
 
 //1 despues que estamos en el login como principal, vamos al flux creamos la funcion inicioLogin 
 //2 vamos a nuestro componente inicioLogin y hacemos el fetch para la funcion que acabamos de crear aca en el componente 
